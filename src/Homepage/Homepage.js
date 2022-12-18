@@ -9,6 +9,7 @@ const Homepage = () => {
   const auth = useContext(AuthContext);
   const [isSubscribed, setIsSubscribed] = useState(null);
 
+  // checks for the subscription of the user
   const fetchData = async () => {
     const response = await axios.get(
       `${process.env.REACT_APP_BACKEND_URL}/data/isSubscribed/${auth.userId}`,
@@ -28,9 +29,11 @@ const Homepage = () => {
       <Button variant="contained" color="secondary" onClick={auth.logout}>
         logout
       </Button>
-      <Typography variant="h4" style={{margin: "20px 0 10px 0"}}>
+      <Typography variant="h4" style={{ margin: "20px 0 10px 0" }}>
         Welcome, {auth.username}
       </Typography>
+      {/* if the user is subscribed then navigated to subscription details page,
+      otherwise catalogue of plans is shown */}
       {isSubscribed && <SubscriberPage />}
       {isSubscribed == false && <Catalogue />}
     </>

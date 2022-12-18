@@ -40,6 +40,7 @@ const Catalogue = () => {
     fetchData();
   }, []);
 
+  // handles dummy payment and subscrives the used with the selected plan id.
   const handlePayment = async () => {
     try {
       await axios.post(
@@ -55,6 +56,7 @@ const Catalogue = () => {
       console.log(error);
     }
   };
+
   return (
     <Box sx={{ m: "20px 40px 20px 40px" }}>
       <Typography variant="h3" style={{ marginBottom: 10 }}>

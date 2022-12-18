@@ -21,6 +21,7 @@ const App = () => {
     >
       <BrowserRouter>
         <Routes>
+          {/* if the user is logged in, navigates to homepage otherwise to the login page*/}
           <Route
             path="/"
             element={isLoggedIn ? <Homepage /> : <Navigate to="/auth" />}
@@ -29,6 +30,7 @@ const App = () => {
             path="/auth"
             element={isLoggedIn ? <Navigate to="/" /> : <Auth />}
           />
+          {/* Default page for not Found path*/}
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>

@@ -49,6 +49,7 @@ module.exports = {
     new Dotenv({
       path: "./.env", // Path to .env file (this is the default)
     }),
+    // sets the html file in the build folder which will be helpful in the deployment
     new HtmlWebpackPlugin({
       template: path.resolve("./public/index.html"),
     }),

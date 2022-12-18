@@ -7,6 +7,7 @@ const SubscriberPage = () => {
   const [details, setDetails] = useState({});
   const auth = useContext(AuthContext);
 
+  // fetches details for the batch time and subscription end.
   const fetchData = async () => {
     const response = await axios.get(
       `${process.env.REACT_APP_BACKEND_URL}/data/getSubscriptionDetails/${auth.userId}`,
@@ -31,6 +32,7 @@ const SubscriberPage = () => {
         Your Batch: {details && details.batch_time}
       </Typography>
       <Typography variant="body1">
+        {/* splits the date from date time format */}
         Your subscription ends on: {date && date.split("T")[0]}
       </Typography>
     </>
