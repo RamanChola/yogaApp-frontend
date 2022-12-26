@@ -11,7 +11,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 // Loads CSS files with the style-loader and css-loader
 // Resolves file extensions in the order of .js, .jsx
 // Outputs the bundled JavaScript to the dist directory with the filename bundle.js
-// Configures the development server to serve the application from the public directory on port 3000 and enables hot reloading with the HotModuleReplacementPlugin
+// Configures the development server to serve the application from the public directory on port 3000 
+// and enables hot reloading with the HotModuleReplacementPlugin
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
